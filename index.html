@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-image: url("102611.webp");
+        }
+        header{
+            display: flex;
+        }
+        header nav{
+            display: flex;
+            margin: 0 0 0 1270px;
+        }
+        nav p{
+            padding: 5px 0 0 15px;
+            color: white;
+        }
+        .images{
+            margin: 0 0 0 30px;
+        }
+        .dots{
+            margin: 0 0 0 30px;
+        }
+        .dots button{
+            background: none;
+            border: none;
+        }
+        .dots img{
+            height: 25px;
+            background-color: white;
+        }
+        .images .einstein_button{
+            border: none;
+            background: none;
+        }
+        .images img{
+            height: 25px;
+            border-radius: 20px;
+        }
+        .images_drop_down{
+            background-color: rgb(238, 238, 238);
+            height: fit-content;
+            position: absolute;
+            width: 400px;
+            border-radius: 10px;
+            margin: 10px 0 0 -390px;
+            text-align: center;
+            padding: 40px 0 0 0;
+            display: none;
+        }
+        .images_drop_down img{
+            height: 80px;
+            padding: 20px 0 0 0;
+            border-radius: 40px;
+        }
+        .images_drop_down button{
+            height: 50px;
+            width: 250px;
+            margin: 20px;
+            border-radius: 10px;
+            color: blue;
+            outline: none;
+            border: 1px solid black;
+            background-color: white;
+        }
+        .images_drop_down .two{
+            display: flex;
+        }
+        .two button{
+            height: 50px;
+            width: 270px;
+            border: none;
+            background-color: white;
+        }
+        .two .a{
+            border-radius: 20px 0 0 20px;
+            width: 320px;
+            color: black;
+        }
+        .two .b{
+            border-radius: 0 20px 20px 0;
+            width: 320px;
+            color: black;
+        }
+        .images_drop_down .down{
+            display: flex;
+            padding: 0 0 20px 90px;
+        }
+        .images:focus-within .images_drop_down{
+            display: block;
+        }
+        .dots_drop_down{
+            background-color: rgb(250, 250, 250);
+            width: 350px;
+            height: 500px;
+            border-radius: 10px;
+            margin: 10px 0 0 -300px;
+            overflow-y: scroll;
+            display: none;
+            position: absolute;
+        }
+        .dots_drop_down .all{
+            display: flex;
+        }
+        .first_column img{
+            height: 40px;
+            margin: 40px 0 0 40px;
+        }
+        .shopping img{
+            margin: 40px 0 0 -9px;
+        }
+        .first_column p{
+            padding: 0 0 0 40px;
+        }
+        .second_column p{
+            padding: 0 0 0 40px;
+        }
+        .third_column p{
+            padding: 0 0 0 40px;
+        }
+        .second_column img{
+            height: 40px;
+            margin: 40px 0 0 40px;
+        }
+        .third_column img{
+            height: 40px;
+            margin: 40px 0 0 40px;
+        }
+        .dots:focus-within .dots_drop_down{
+            display: block;
+        }
+        .bar{
+            background-color: white;
+            margin: 0 0 0 470px;
+            width: fit-content;
+            padding: 10px 10px;
+            border-radius: 20px;
+            display: flex;
+        }
+        .bar input{
+            width: 500px;
+            height: 40px;
+            border: none;
+            outline: none;
+        }
+        .bar img{
+            height: 20px;
+            margin: 10px 0 0 0;
+        }
+        .input_drop_down{
+            background-color: white;
+            height: 300px;
+            width: 551px;
+            margin: -10px 0 0 -30px;
+            border-radius: 0 0 20px 20px;
+            line-height: 35px;
+            padding: 40px 0 0 40px;
+            display: none;
+            position: absolute;
+        }
+        .input_drop:focus-within .input_drop_down{
+            display: block;
+        }
+        .input_drop .p{
+            background: none;
+            border: none;
+        }
+        .google_logo{
+            margin: 40px 0 0 630px;
+        }
+        .section{
+            height: 340px;
+            margin: 20px 0 0 473px;
+            width: 585px;
+        }
+        .section .colum{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .image1 img{
+            height: 50px;
+        }
+        .image1 p{
+            padding: 0 0 0 6px;
+            color: rgb(250, 250, 250);
+        }
+        .image1{
+            height: fit-content;
+            width: fit-content;
+        }
+        .image1:hover{
+            background-color: rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+        }
+        .image2{
+            height: fit-content;
+            width: fit-content;
+        }
+        .image2:hover{
+            background-color: rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+        }
+        .image2 img{
+            height: 50px;
+        }
+        .image2 p{
+            padding: 0 0 0 5px;
+            color: rgb(250, 250, 250);
+        }
+        .image3{
+            height: fit-content;
+            width: fit-content;
+        }
+        .image3:hover{
+            background-color: rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+        }
+        .image3 img{
+            height: 50px;
+        }
+        .image3 p{
+            padding: 0 0 0 30px;
+            color: rgb(250, 250, 250);
+        }
+        .image4{
+            height: fit-content;
+            width: fit-content;
+        }
+        .image4:hover{
+            background-color: rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+        }
+        .image4 img{
+            height: 50px;
+        }
+        .image4 p{
+            color: rgb(250, 250, 250);
+        }
+        .image5{
+            height: fit-content;
+            width: fit-content;
+        }
+        .image5:hover{
+            background-color: rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+        }
+        .image5 img{
+            height: 50px;
+        }
+        .image5 p{
+            color: rgb(250, 250, 250);
+        }
+        .section .colum2{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .image6{
+            height: fit-content;
+            width: fit-content;
+            margin: 60px 0 0 10px;
+        }
+        .image6:hover{
+            background-color: rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+        }
+        .image6 img{
+            height: 50px;
+        }
+        .image6 p{
+            padding: 0 0 0 5px;
+            color: rgb(250, 250, 250);
+        }
+        .image7{
+            height: fit-content;
+            width: fit-content;
+            margin: 60px 0 0 10px;
+        }
+        .image7:hover{
+            background-color: rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+        }
+        .image7 img{
+            height: 50px;
+        }
+        .image7 p{
+            color: rgb(250, 250, 250);
+        }
+        .image8{
+            height: fit-content;
+            width: fit-content;
+            margin: 60px 0 0 10px;
+        }
+        .image8:hover{
+            background-color: rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+        }
+        .image8 img{
+            height: 50px;
+        }
+        .image8 p{
+            padding: 0 0 0 5px;
+            color: rgb(250, 250, 250);
+        }
+        .image9{
+            height: fit-content;
+            width: fit-content;
+            margin: 60px 0 0 10px;
+        }
+        .image9:hover{
+            background-color: rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+        }
+        .image9 img{
+            height: 50px;
+        }
+        .image9 p{
+            color: rgb(250, 250, 250);
+            padding: 0 0 0 5px;
+        }
+        .image10{
+            height: fit-content;
+            width: fit-content;
+            margin: 60px 0 0 10px;
+        }
+        .image10:hover{
+            background-color: rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+        }
+        .image10 img{
+            height: 50px;
+        }
+        .image10 p{
+            color: rgb(250, 250, 250);
+        }
+        li:hover{
+            background-color: rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+        }
+        nav p:hover{
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .dots .note{
+            background-color: aqua;
+            width: 100px;
+            height: 20px;
+            text-align: center;
+            margin: 0 0 0 -40px;
+            background-color: rgb(43, 43, 43);
+            color: white;
+            border-radius: 10px;
+            display: none;
+            position: absolute;
+        }
+        .dots:hover .note{
+            display: block;
+        }
+        .images .note1{
+            background-color: rgb(43, 43, 43);
+            height: fit-content;
+            border-radius: 10px;
+            color: white;
+            margin: 0 0 0 -176px;
+            position: absolute;
+            display: none;
+        }
+        .images:hover .note1{
+            display: block;
+        }
+       .dots_drop_down .all1{
+            display: flex;
+       } 
+       .dots_drop_down img:hover{
+            background-color: rgba(0, 0, 0, 0.4);
+       }
+       .btn button{
+        height: 40px;
+        width: 150px;
+        margin: 20px 0 20px 100px;
+        border: 1px solid black;
+        border-radius: 20px;
+        color: blue;
+       }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <p>Gmail</p>
+            <p>Images</p>
+        </nav>
+        <div class="dots">
+            <button><img src="download.png" alt=""></button>
+            <div class="note">
+                <p>Google apps</p>
+            </div>
+            <div class="dots_drop_down">
+                <div class="all">
+                    <div class="first_column">
+                        <div class="Account">
+                            <img src="einstein.jpeg" alt="">
+                            <p>Account</p>
+                        </div>
+                        <div class="youtube">
+                            <img src="youtube.png" alt="">
+                            <p>youtube</p>
+                        </div>
+                        <div class="Gmail">
+                            <img src="gmail.png" alt="">
+                            <p>Gmail</p>
+                        </div>
+                        <div class="contacts">
+                            <img src="google_contact.png" alt="">
+                            <p>Contacts</p>
+                        </div>
+                        <div class="translate">
+                            <img src="google_translate.png" alt="">
+                            <p>Translate</p>
+                        </div>
+                        <div class="shopping">
+                            <img src="google_shopping.png" alt="">
+                            <p>Shopping</p>
+                        </div>
+                    </div>
+                    <div class="second_column">
+                        <div class="search">
+                            <img src="google_search.png" alt="">
+                            <p>Search</p>
+                        </div>
+                        <div class="play">
+                            <img src="google_play.png" alt="">
+                            <p>Play</p>
+                        </div>
+                        <div class="meet">
+                            <img src="google_meet.png" alt="">
+                            <p>Meet</p>
+                        </div>
+                        <div class="drive">
+                            <img src="google_drive.png" alt="">
+                            <p>Drive</p>
+                        </div>
+                        <div class="photo">
+                            <img src="google_photo.png" alt="">
+                            <p>Photo</p>
+                        </div>
+                    </div>
+                    <div class="third_column">
+                        <div class="maps">
+                            <img src="google_maps.png" alt="">
+                            <p>Maps</p>
+                        </div>
+                        <div class="news">
+                            <img src="google_news.png" alt="">
+                            <p>news/p>
+                        </div>
+                        <div class="chat">
+                            <img src="google_news.png" alt="">
+                            <p>News</p>
+                        </div>
+                        <div class="calendar">
+                            <img src="google_calendar.png" alt="">
+                            <p>calendar</p>
+                        </div>
+                        <div class="my_ad_center">
+                            <img src="my_ad_center.png" alt="">
+                            <p>My ad ce.....</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="all1">
+                    <div class="first_column">
+                        <div class="finance">
+                            <img src="google_finance.png" alt="">
+                            <p>Finance</p>
+                        </div>
+                        <div class="slides">
+                            <img src="google_slides.png" alt="">
+                            <p>Slides</p>
+                        </div>
+                        <div class="keep">
+                            <img src="google_keep.png" alt="">
+                            <p>Keep</p>
+                        </div>
+                        <div class="earth">
+                            <img src="google_earth.png" alt="">
+                            <p>Earth</p>
+                        </div>
+                        <div class="ad">
+                            <img src="google_ads.png" alt="">
+                            <p>Google ads</p>
+                        </div>
+                        <div class="form">
+                            <img src="google_form.png" alt="">
+                            <p>Form</p>
+                        </div>
+                    </div>
+                    <div class="second_column">
+                        <div class="docs">
+                            <img src="google_docs.png" alt="">
+                            <p>Docs</p>
+                        </div>
+                        <div class="books">
+                            <img src="google_books.png" alt="">
+                            <p>Books</p>
+                        </div>
+                        <div class="keep">
+                            <img src="google_keep.png" alt="">
+                            <p>Keep</p>
+                        </div>
+                        <div class="jamboard">
+                            <img src="google_jamboard.png" alt="">
+                            <p>Jamboard</p>
+                        </div>
+                        <div class="google_one">
+                            <img src="google_one.png" alt="">
+                            <p>Google One</p>
+                        </div>
+                        <div class="chrome">
+                            <img src="google_chrome_store.png" alt="">
+                            <p>Chrome..</p>
+                        </div>
+                    </div>
+                    <div class="third_column">
+                        <div class="sheets">
+                            <img src="google_sheets.png" alt="">
+                            <p>Sheets</p>
+                        </div>
+                        <div class="blooger">
+                            <img src="google_blogger.png" alt="">
+                            <p>Blogger</p>
+                        </div>
+                        <div class="classroom">
+                            <img src="google_classroom.png" alt="">
+                            <p>Classroom</p>
+                        </div>
+                        <div class="arts">
+                            <img src="google_arts.png" alt="">
+                            <p>Arts</p>
+                        </div>
+                        <div class="travel">
+                            <img src="google_travel.png" alt="">
+                            <p>Travel</p>
+                        </div>
+                        <div class="password">
+                            <img src="google_password.png" alt="">
+                            <p>Password</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn">
+                    <button>More From Google</button>
+                </div>
+            </div>
+        </div>
+        <div class="images">
+            <button class="einstein_button"><img src="einstein.jpeg" alt=""></button>
+            <div class="note1">
+                <p>Google Account</p>
+                <p>Adio Mutalib</p>
+                <p>adebayoadiomutalib1@gmail.com</p>
+            </div>
+            <div class="images_drop_down">
+                <p>adebayoadiomutalib1@gmail</p>
+                <img src="einstein.jpeg" alt="">
+                <h3>Hi, Adio!!</h3>
+                <button>Manage Your Google Account</button>
+                <div class="two">
+                    <button class="a">Add Account</button>
+                    <button class="b">Sign Out</button>
+                </div>
+                <div class="down">
+                    <p>Privacy Policies .</p>
+                    <p>Term of Services</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <img class="google_logo" src="google_logo.png" alt="">
+    <div class="bar">
+        <img src="search_icon.png" alt="">
+        <div class="input_drop">
+            <button class="p"><input type="search" name="" id="" placeholder="Search Google or type a URL "></button>
+            <div class="input_drop_down">
+                <ul>
+                    <li>background-remover</li>
+                    <li>9anime</li>
+                    <li>google_logo</li>
+                    <li>Font Awesome</li>
+                    <li>Netlify</li>
+                    <li>dots icons</li>
+                    <li>Oceans of games</li>
+                    <li>Yuji itadori</li>
+                </ul>
+            </div>
+        </div>
+        <img src="search_by_voice.png" alt="">
+        <img src="google_lens.png" alt="">
+    </div>
+    <div class="section">
+        <div class="colum">
+            <div class="image1">
+                <img src="image1.png" alt="">
+                <p>Home</p>
+            </div>
+            <div class="image2">
+                <img src="image2.png" alt="">
+                <p>Tesla</p>
+            </div>
+            <div class="image3">
+                <img src="image3.png" alt="">
+                <p>COD</p>
+            </div>
+            <div class="image4">
+                <img src="image4.png" alt="">
+                <p>Physics</p>
+            </div>
+            <div class="image5">
+                <img src="image5.png" alt="">
+                <p>Surgery</p>
+            </div>
+        </div>
+        <div class="colum2">
+            <div class="image6">
+                <img src="image6.png" alt="">
+                <p>Foods</p>
+            </div>
+            <div class="image7">
+                <img src="image7.png" alt="">
+                <p>Whales</p>
+            </div>
+            <div class="image8">
+                <img src="image8.png" alt="">
+                <p>Luffy</p>
+            </div>
+            <div class="image9">
+                <img src="image9.png" alt="">
+                <p>Zoro</p>
+            </div>
+            <div class="image10">
+                <img src="image10.png" alt="">
+                <p>HTML</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
